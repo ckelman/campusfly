@@ -1,0 +1,94 @@
+
+
+  <!-- Looks like the start of error detection or something-->
+<%= simple_form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <!-- end of error detection-->
+
+  <!-- start of forms-->
+
+  <%= f.hidden_field :organization_id,  :value => params['org_id'] %>
+
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :title, :class => 'eventCreationHeading' %></span> 
+    <span class="entryEntryField col-md-9"><%= f.text_field :title, autofocus: true, :required =>true, :class=> 'descriptionFieldsCreateEventTitle'%></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :description %></span>
+    <span class="entryEntryField col-md-9"> <%= f.text_area :description, autofocus: true, :required =>true, :class => 'form-control', :rows => 3 %></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :location %> </span>
+    <span class="entryEntryField col-md-9"><%= f.text_field :location, autofocus: true, :required =>true  %></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :date %> </span>
+    <span class="entryEntryField col-md-9"><%= f.datetime_select :date, :ampm => true, :required =>true  %></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :price %></span> 
+    <span class="entryEntryField col-md-9"><%= f.number_field :price, autofocus: true, :required =>true  %></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :tickets %> </span>
+    <span class="entryEntryField col-md-9"><%= f.number_field :tickets, autofocus: true, :required =>true  %></span>
+  </div>
+<div class = "entryContainer row multiple">
+  <span class="entryTitle col-md-3"><%= f.label :categories %> </span>
+  <ul class="col-md-9">
+      <% @selected_cats.each do |category| %>
+
+
+
+     <li><%= select_tag "event[categories][]", options_for_select(@cats.collect{ |categoryy| [categoryy, categoryy] },category), :id => 'event_categories'  %></li>
+
+      <% end%>
+      <li><%= select_tag "event[categories][]", options_for_select(@cats.collect{ |categoryy| [categoryy, categoryy] }), :id => 'event_categories',:prompt => "Please select a category"%></li>
+      <li><%= select_tag "event[categories][]", options_for_select(@cats.collect{ |categoryy| [categoryy, categoryy] }), :id => 'event_categories',:prompt => "Please select a category"%></li>
+
+    </ul>
+
+
+    <div class = "entryContainer row multiple">
+    <%= f.input :off_campus, collection: [["yes", true], ["no", false]], :selected => ["no", false]  %>
+    </div>
+  </div>
+
+  
+   
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :transportation_details %></span>
+    <span class="entryEntryField col-md-9"><%= f.text_field :transportation_details, autofocus: true %></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :photo %> </span>
+    <span class="entryEntryField col-md-9"><%= f.file_field :photo %></span>
+  </div>
+  
+
+  <div class="actions row">
+    
+    <%= f.submit  :class => 'eventCreateSubmit' %>
+    
+  </div>
+<% end %>
+
+<!-- end of forms-->

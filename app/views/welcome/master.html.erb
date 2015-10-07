@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<!-- BASICS -->
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>CampusFly</title>
+
+        <meta name="description" content="Author: Rikesh Thapa">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Amoeba's css -->
+		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen">
+		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen">
+
+		<!-- Bootstrapping -->		
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/style.css">            <!-- Issue here is that the log in/ sign in is also using "style.css"-->
+
+		<!-- skin -->
+		<link rel="stylesheet" href="skin/default.css">
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+    	<!-- log-ins-->
+    	<link rel="stylesheet" href="login/css/reset.css"> <!-- CSS reset -->
+		<link rel="stylesheet" href="login/css/style.css"> <!-- Gem style -->
+
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+		<link rel="stylesheet" type="text/css" href="css/DashBoard.css">
+
+    </head>
+	 
+    <body>  
+
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        	<div class="container">
+            	<div class="navbar-header">
+                	<a class="navbar-brand" id="mainLogo" href="index.html"><img id="logoCampusFly" src="img/campusflyBWtransparent.png"> CampusFly </a>
+            	</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-buttons-container">
+                <ul class="nav navbar-nav">
+                    <li class = "help"><a href="#"><i class="fa fa-info"></i><i class="fa fa-caret-down"></i></a>
+							<ul>
+								<li><a href="#services">About</a></li>
+								<li><a href="#section-contact">Contact</a></li>
+								<li><a href="www.campusfly.us/blog.html">Blog</a></li>
+							</ul>		
+                    </li>
+                    <li id="trigger" class="navCategories"><a class="cd-login"  href="#0">Log in</a></li>
+                    <li id="trigger" class="navCategories"><a class="cd-signup"  href="#0">Sign up</a></li>
+                    
+                </ul>
+            </div>
+        	</div>
+    	</nav>
+			
+		<!--</header>
+		
+
+		<!--  --------------------------------------------------------------------------- Start of User Pop Up Mod   -->	
+
+		<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0">Log In</a></li>
+				<li><a href="#0">Sign Up</a></li>
+			</ul>
+
+
+			<!-- login start-->
+
+			<div id="cd-login"> <!-- log in form -->
+				<form class="cd-form">
+
+					<div class= "btn facebook-login" id="loginButtons">
+						<!--<a href="https://www.facebook.com/v2.0/dialog/oauth?client_id=138566025676&amp;redirect_uri=https%3A%2F%2Fwww.airbnb.com%2Fauthenticate&amp;scope=email%2Cuser_birthday%2Cuser_likes%2Cuser_education_history%2Cuser_hometown%2Cuser_location%2Cuser_friends" class="fb-button fb-blue btn icon-btn btn-block btn-large large padded-btn-block row-space-1 btn-facebook" data-populate_uri="" data-redirect_uri="https://www.airbnb.com/authenticate">-->
+							<span class="facebook-icon-container">
+	    							<i class="fa fa-facebook"></i>
+							</span>
+							<span class="facebook-text-container">
+	    						Log in with Facebook
+	  						</span>
+						<!--</a>-->
+					</div>
+
+					<!-- or separator -->
+					
+					<div class="or-spacer">
+						<div class="mask"></div>
+						<span><i>or</i></span>
+					</div>
+
+					<div class="or-spacer-vertical left">
+  						<div class="mask"></div>
+					</div>
+
+					<div class="or-spacer-vertical right">
+  						<div class="mask"></div>
+					</div>
+					
+					<!-- end of or separator -->
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Login">
+					</p>
+				</form>
+				
+				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
+
+			<!-- end of login -->
+
+
+			<!-- start of signup -->
+
+			<div id="cd-signup"> <!-- sign up form -->
+				<form class="cd-form">
+					<a href = "#"  class = "btn btn-dark btn-lg" id= "eventSwitcher">Click Here if You are an Event Creator</a>
+
+					<div class= "btn facebook-login" id="loginButtons">
+						<!--<a href="https://www.facebook.com/v2.0/dialog/oauth?client_id=138566025676&amp;redirect_uri=https%3A%2F%2Fwww.airbnb.com%2Fauthenticate&amp;scope=email%2Cuser_birthday%2Cuser_likes%2Cuser_education_history%2Cuser_hometown%2Cuser_location%2Cuser_friends" class="fb-button fb-blue btn icon-btn btn-block btn-large large padded-btn-block row-space-1 btn-facebook" data-populate_uri="" data-redirect_uri="https://www.airbnb.com/authenticate">-->
+							<span class="facebook-icon-container">
+	    							<i class="fa fa-facebook"></i>
+							</span>
+							<span class="facebook-text-container">
+	    						Sign Up with Facebook
+	  						</span>
+						<!--</a>-->
+					</div>
+
+					<!-- or separator -->
+					
+					<div class="or-spacer">
+						<div class="mask"></div>
+						<span><i>or</i></span>
+					</div>
+
+					<div class="or-spacer-vertical left">
+  						<div class="mask"></div>
+					</div>
+
+					<div class="or-spacer-vertical right">
+  						<div class="mask"></div>
+					</div>
+					
+					<!-- end of or separator -->
+
+					<p class= "emailSignUpHeader">
+						<i class="fa fa-envelope-o"></i> Sign Up wth email
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">First Name, Last Name</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="First Name, Last Name"><!-- used to be "username"-->
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">.u.rochester.edu E-mail</label> 
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="u.rochester.edu E-mail"> <!-- used to be "E-mail"-->
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password"> <!-- used to be "Password"-->
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Confirm Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Confirm Password"> <!-- used to be "Password"-->
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="termsOfService.html" target="_blank">Terms and Services</a></label>
+					</p>
+
+					<p class= "emailSignUpHeader">
+						Note: you will have to enter your .edu email and verify in the next section to complete your account creation.
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+
+			<!-- end of signup -->
+
+			<div id="cd-reset-password"> <!-- reset password form -->
+				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+
+			<div id="cd-verify-email"> <!-- email verification -->
+				<p class="cd-form-message">We have sent you an email verification code. Please verify your email b entering the code below.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">Code</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">Tell me about CampusFly news!</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Submit">
+					</p>
+				</form>
+				<!--<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>-->
+			</div> <!-- email verification -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+
+
+<!--  --------------------------------------------------------------------------- End of User Pop Up Mod  -->
+
+
+<!--  ---------------------------------------------------------------------------  Start of Event Creation Mod -->	
+
+		<div class="cd-event-modal"> <!--class="cd-user-modal"--> <!-- this is the entire modal form, including the background -->
+		<div class="cd-event-modal-container"> <!--class="cd-user-modal-container"--> <!-- this is the container wrapper -->
+			<ul class="cd-switcher"> <!--class="cd-switcher"-->
+				<li><a href="#0">Student</a></li>
+				<li><a href="#0">Business</a></li>
+			</ul>
+
+			<!-- login start-->
+
+			<div id="cd-student"> <!--id="cd-login"--> <!-- log in form -->
+				<form class="cd-form"> 
+					<p class="cd-form-message">Who are you?</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail .edu</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail .edu">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<a href = "#" id= "loginButtons" class = "btn btn-dark btn-lg">Sign Up First</a>
+
+					<a href = "#" id= "verify"> Verify Green </a>
+					<a href = "#" id= "verify"> Enter Code </a> <a href = "#" id= "verify"> Check</a>
+
+					<!-- or separator -->
+					
+					<div class="or-spacer">
+						<div class="mask"></div>
+						<span><i>or</i></span>
+					</div>
+
+					<div class="or-spacer-vertical left">
+  						<div class="mask"></div>
+					</div>
+
+					<div class="or-spacer-vertical right">
+  						<div class="mask"></div>
+					</div>
+					
+					<!-- end of or separator -->
+					<!-- If verify button is green, slide down -->
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">School </label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="School">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Organization </label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Organization">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Contact </label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Contact">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Title/Position </label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Title/Position">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+					<!--
+						This is where we would add "Add members section"
+						This is where we would add additional tag information.
+						Reference the layout in Rikesh's Blue Book. 
+
+					-->
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="termsOfService.html" target="_blank">Terms and Services</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Complete!">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
+
+			<!-- end of Student -->
+
+			<!-- start of Outside Business -->
+
+			<div id="cd-business"> <!-- sign up form -->
+				<form class="cd-form">
+
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Name of Business</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Name of Business">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label> 
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail"> <!-- used to be "E-mail"-->
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email"> Verification-code </label> 
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="Enter Code Here"> <!-- used to be "E-mail"-->
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password"> <!-- used to be "Password"-->
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Confirm Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Confirm Password"> <!-- used to be "Password"-->
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">First Name, Last Name</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="First Name, Last Name"><!-- used to be "username"-->
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Title/Position </label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Title/Position">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="termsOfService.html" target="_blank">Terms and Services</a></label>
+					</p>
+
+					<p class= "emailSignUpHeader">
+						Note: you will have to enter your .edu email and verify in the next section to complete your account creation.
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Complete!">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+			<!-- end of signup -->
+
+			<!-- Start of Create Event Link
+			 launches on conpletion of the Buiness/ Student Organization signup form
+ 			-->
+
+			<div id="cd-event-creation-transition"> <!-- reset password form -->
+				<p class="cd-form-message">Congradulations!</p>
+				<p class="cd-form-message">Now that you are registered:</p>
+				
+				<form class="cd-form">					
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create Event">
+					</p>
+
+					<p class="cd-form-message">I'll do it later:</p>
+					<p class="cd-form-bottom-message"><a href="#0">View organization dashboard</a></p>
+				
+				</form>
+
+				
+			</div> <!-- cd-reset-password -->
+
+			<!-- End of Create event snippet -->
+
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+
+
+<!--  -------------------------- End of Creation Mod------------------------------------------------- -->
+
+
+
+
+		<section class="featured" id="header">
+			<div class="container"> 
+				<div class="row mar-bot40">
+					<div class="col-md-6 col-md-offset-3">						
+						<div class="align-center">
+							<h2 class="slogan"><span class = "title">CampusFly</span> </br> THE UNIVERSITY OF ROCHESTER</h2>
+							<h3 class = "title" id ="slogan">All your on-campus and off-campus events in one place!</h3>
+							<a href="#section-works" class="btn btn-dark btn-lg">View Events</a> <a href = "#" id="CreateEvent" class = "btn btn-dark btn-lg">Create Event</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>				
+
+
+				
+		<!-- section works-- Events section -->
+		<section id="section-works" class="section appear clearfix">
+			<div class="container">
+				
+				<div class="row mar-bot40">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+							<h2 class="section-heading animated" data-animation="bounceInUp">Events</h2>
+							<p>Not sure what you are looking for? Just browse all the events in your commmunity or fine-tune based on your preferences.</p>
+						</div>
+					</div>
+				</div>
+					
+                        <div class="row">
+                          <nav id="filter" class="col-md-12 text-center">
+                            <ul>
+                              <li><a href="#" class="current btn-theme btn-small" data-filter="*">All</a></li>
+                              <li><a href="#"  class="btn-theme btn-small" data-filter=".newest" >Newest</a></li>
+                              <li><a href="#"  class="btn-theme btn-small" data-filter=".nearest">Nearest</a></li>
+                              <li ><a href="#" class="btn-theme btn-small" data-filter=".price">$ to $$$</a></li>
+                            </ul>
+                          </nav>
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="portfolio-items isotopeWrapper clearfix" id="3">
+							  
+                                <article class="col-md-4 isotopeItem newest nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img1.jpg" alt="" />
+										 <div class="portfolio-desc">										 	
+											<div class="folio-info">
+												<div class ="top-margin">
+													<h6 class ="top-margin-left">$$</h6> <h6 class ="top-margin-right">Date and time</h6>
+												</div>
+										 		<div class = "details">
+													<h5><a href="#">Event 1</a></h5>
+													<p>Location</p>
+													<p>Description</p>
+													<p>Tickets Left</p>
+												</div>
+												<a href="img/portfolio/img1.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+												<div class = "social">
+											 		<i class="fa fa-facebook-square fa-1x"></i>
+											 	</div>	
+											</div>											 								   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img2.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 2</a></h5>
+												<a href="img/portfolio/img2.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+								
+
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img3.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 3</a></h5>
+												<a href="img/portfolio/img3.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem price">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img4.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 4</a></h5>
+												<a href="img/portfolio/img4.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img5.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 5</a></h5>
+												<a href="img/portfolio/img5.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem newest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img6.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 6</a></h5>
+												<a href="img/portfolio/img6.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem price">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img7.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 7</a></h5>
+												<a href="img/portfolio/img7.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img8.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 8</a></h5>
+												<a href="img/portfolio/img8.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem price">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img9.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 9</a></h5>
+												<a href="img/portfolio/img9.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+                                </div>
+                                        
+							</div>
+                                     
+
+							</div>
+                        </div>
+				
+			</div>
+		</section>
+
+	<section class="aboutUs" id="header">
+			<div class="container"> 
+				<div class="row mar-bot40">
+					<div class="col-md-6 col-md-offset-3">						
+						<div class="align-center">
+							<h2 class="slogan"><span class = "title">CampusFly</span> </br> About Us</h2>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+<!--
+	<section id="aboutUs" class="featured">
+		<div class="container">
+				<img src="img/groupPicture.jpg">
+					<div class="col-md-6 col-md-offset-3">			
+						<div class="align-center">
+							<h1>About Us</h1>
+						</div>
+					</div>
+		</div>
+	</section>
+-->
+
+
+	<!--Start of footer class: including social media links etc-->	
+	<section id="footer" class="section footer">
+		<div class="container">
+			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+				<div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+				</div>
+			</div>
+
+			<div class="row align-center copyright">
+					<div class="col-sm-12"><p>Copyright &copy; 2015 CampusFly</p></div>
+			</div>
+		</div>
+
+	</section>
+	<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+
+	
+	<script src="login/js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="js/skrollr.min.js"></script>		
+	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="js/jquery.localscroll-1.2.7-min.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/jquery.appear.js"></script>
+	<script src="js/validate.js"></script>
+    <script src="js/main.js"></script>
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 11,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [	{		featureType:"all",		elementType:"all",		stylers:[		{			invert_lightness:true		},		{			saturation:10		},		{			lightness:30		},		{			gamma:0.5		},		{			hue:"#1C705B"		}		]	}	]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using out element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+            }
+        </script>
+
+
+
+        <!-- Facebook signUp -->
+
+
+        <script>
+			  // This is called with the results from from FB.getLoginStatus().
+			  function statusChangeCallback(response) {
+			    console.log('statusChangeCallback');
+			    console.log(response);
+			    // The response object is returned with a status field that lets the
+			    // app know the current login status of the person.
+			    // Full docs on the response object can be found in the documentation
+			    // for FB.getLoginStatus().
+			    if (response.status === 'connected') {
+			      // Logged into your app and Facebook.
+			      testAPI();
+			    } else if (response.status === 'not_authorized') {
+			      // The person is logged into Facebook, but not your app.
+			      document.getElementById('status').innerHTML = 'Please log ' +
+			        'into this app.';
+			    } else {
+			      // The person is not logged into Facebook, so we're not sure if
+			      // they are logged into this app or not.
+			      document.getElementById('status').innerHTML = 'Please log ' +
+			        'into Facebook.';
+			    }
+			  }
+
+			  // This function is called when someone finishes with the Login
+			  // Button.  See the onlogin handler attached to it in the sample
+			  // code below.
+			  function checkLoginState() {
+			    FB.getLoginStatus(function(response) {
+			      statusChangeCallback(response);
+			    });
+			  }
+
+			  window.fbAsyncInit = function() {
+			  FB.init({
+			    appId      : '{your-app-id}',
+			    cookie     : true,  // enable cookies to allow the server to access 
+			                        // the session
+			    xfbml      : true,  // parse social plugins on this page
+			    version    : 'v2.2' // use version 2.2
+			  });
+
+			  // Now that we've initialized the JavaScript SDK, we call 
+			  // FB.getLoginStatus().  This function gets the state of the
+			  // person visiting this page and can return one of three states to
+			  // the callback you provide.  They can be:
+			  //
+			  // 1. Logged into your app ('connected')
+			  // 2. Logged into Facebook, but not your app ('not_authorized')
+			  // 3. Not logged into Facebook and can't tell if they are logged into
+			  //    your app or not.
+			  //
+			  // These three cases are handled in the callback function.
+
+			  FB.getLoginStatus(function(response) {
+			    statusChangeCallback(response);
+			  });
+
+			  };
+
+			  // Load the SDK asynchronously
+			  (function(d, s, id) {
+			    var js, fjs = d.getElementsByTagName(s)[0];
+			    if (d.getElementById(id)) return;
+			    js = d.createElement(s); js.id = id;
+			    js.src = "//connect.facebook.net/en_US/sdk.js";
+			    fjs.parentNode.insertBefore(js, fjs);
+			  }(document, 'script', 'facebook-jssdk'));
+
+			  // Here we run a very simple test of the Graph API after login is
+			  // successful.  See statusChangeCallback() for when this call is made.
+			  function testAPI() {
+			    console.log('Welcome!  Fetching your information.... ');
+			    FB.api('/me', function(response) {
+			      console.log('Successful login for: ' + response.name);
+			      document.getElementById('status').innerHTML =
+			        'Thanks for logging in, ' + response.name + '!';
+			    });
+			  }
+		</script>
+
+		<!-- End of Facebook signUp -->
+
+		<!-- facebook SDK-->
+
+		<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : 'your-app-id',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- end of facebook SDK setUp-->
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        
+		<script src="login/js/main.js"></script> <!-- Gem jQuery -->
+		<!-- Google analytics-->
+
+		 <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-58920131-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>

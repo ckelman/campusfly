@@ -1,0 +1,27 @@
+<%= simple_form_for(@organization) do |f| %>
+  <%= f.error_notification %>
+
+
+  <%= hidden_field_tag :creator_id,  current_user.id %>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :name %></span> 
+    <span class="entryEntryField col-md-9"><%= f.text_field :name, autofocus: true, :required =>true, :class => 'descriptionFieldsCreateEventTitle'%></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :description %></span>
+    <span class="entryEntryField col-md-9"> <%= f.text_field :description, autofocus: true, :required =>true, :class => 'descriptionFieldsCreateEvent'  %></span>
+  </div>
+
+  <div class="entryContainer row">
+    <span class="entryTitle col-md-3"><%= f.label :photo %> </span>
+    <span class="entryEntryField col-md-9"><%= f.file_field :photo %></span>
+  </div>
+
+ <div class="actions row">
+    
+    <%= f.submit  :class => 'eventCreateSubmit' %>
+    
+  </div>
+<% end %>

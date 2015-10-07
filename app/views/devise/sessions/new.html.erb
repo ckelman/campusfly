@@ -1,0 +1,73 @@
+<%= form_for(:user, url: session_path(:user), :html => {:class => "new_user cd-form"}) do |f| %>
+
+
+					<%= link_to user_omniauth_authorize_path(:facebook),:class => "my_popup", :"data-width" => 600, :"data-height" => 400 do %>
+						<div class= "btn facebook-login" id="loginButtons">
+							<span class="facebook-icon-container">
+	    							<i class="fa fa-facebook"></i>
+							</span>
+							<span class="facebook-text-container">
+	    						Log in with Facebook
+	  						</span>
+						</div>
+					<% end %>
+
+					<!-- or separator -->
+					
+					<div class="or-spacer">
+						<div class="mask"></div>
+						<span><i>or</i></span>
+					</div>
+
+					<div class="or-spacer-vertical left">
+  						<div class="mask"></div>
+					</div>
+
+					<div class="or-spacer-vertical right">
+  						<div class="mask"></div>
+					</div>
+
+					<br>
+					<% if params['signin_error']%>
+					<ul>
+						<li>Wrong email or password, please try again</li>
+					</ul>
+					<% end%>
+					
+					<!-- end of or separator -->
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="user_email">E-mail</label>
+						<input class="full-width has-padding has-border" id="user_email" name="user[email]" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="user_password">Password</label>
+						<input class="full-width has-padding has-border" id="user_password" name="user[password]" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="user_remember_me" name="user[remember_me]" checked>
+						<label for="user_remember_me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+					<%= f.submit "Login", :class => "full-width"%>
+					</p>
+				<% end %>
+
+		<script>
+			function popupCenter(url, width, height, name) {
+			  var left = (screen.width/2)-(width/2);
+			  var top = (screen.height/2)-(height/2);
+			  return window.open(url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top);
+			}
+
+			$("a.my_popup").click(function(e) {
+			  popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
+			  e.stopPropagation(); return false;
+			});
+		</script>

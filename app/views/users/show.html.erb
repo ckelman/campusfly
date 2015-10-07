@@ -1,0 +1,226 @@
+
+
+
+
+	
+
+	<div class= "row">
+		<div class="container" id="mainSection">
+			<div class="col-md-3" id="profileSection">
+				<div class="row" id="profilePic">
+						<%= image_tag @user.image_large, :id => "porfilePicBig" %>
+					<div class="container" id="profileCaption">
+						<p><%=@user.first_name %></p>
+						<!--<a href="#">View Profile</a>
+						<p></p>
+						<a href="#">Edit Profile</a>-->
+						</br>
+						</br>
+
+					</div>
+				</div>
+				<div class="row" id="verification">
+					<div class="heading">
+						Verifications
+					</div>
+					<% if @user.student? %>
+					<p> <i class="fa fa-check-circle-o"></i> Your .edu email has been verified.</p>
+					<% else %>
+					<p> <i class="fa fa-times-circle-o"></i> Your .edu email has been verified.</p>
+					<% end %>
+
+					<% if @user.oauth %>
+					<p> <i class="fa fa-check-circle-o"></i> Your facebook profile has been verified.</p>
+					<% else %>
+					<p> <i class="fa fa-times-circle-o"></i> Your facebook profile has not been verified.</p>
+					<% end %>
+
+					<!-- <p> <i class="fa fa-times-circle-o"></i> Your credit card has not been verified.</p>
+					<p> <i class="fa fa-check-circle-o"></i> Your organization CampusFLy has been verified.</p>
+					<p> <i class="fa fa-check-circle-o"></i> Your organization CampusFLy's event "CampusFLy Beta Launch" has been verified.</p> -->
+				</div>
+			</div>
+
+			<div class="col-md-8" id="content">
+				
+				<!--
+				<div class="row" id="inviteFriends">
+					<div class="col-md-8">
+						<p class="lead">	Thank you for participating in out Beta test!<!--Invite your firends and earn credit!--> <!--</p>
+						<p> Once we open the gates to everyone, the button to the right will be activated. Each person you invite will get you points, to win cool swag and get free tickets. Redeeming store still to come! </p>
+					</div>
+					<div class="col-md-3 col-md-offset-1 inviteFriend">
+						<button type="submit" class="btnInvite">Invite Friends</button>
+					</div>
+				</div>-->
+				
+				<div class="row" id="myEvents">
+					<div class="heading">
+						My Events
+					</div>
+					<div class="events">
+
+						<div class="col-md-12">
+                            <div class="row">
+                              <div class="portfolio-items isotopeWrapper clearfix" id="3">
+							  
+                                <% @events.each do |event| %>
+                                <article class="col-md-4 isotopeItem newest nearest" id='this_thing'>
+                                	<div class="portfolio-item">
+                                	<!-- The CSS is in "zEventDisplayFormatting.css-->
+                                		<div class="portfolio-item-image-front-formatting">
+
+                                			<!-- Event image -->
+											<%= image_tag event.image %>
+
+
+											<div class="event_front_container">
+												<div class="sectionHeading">
+													<h2><%= event.title %></h2>
+													<p class="organization">by <%=event.organization.name%></p>
+													<br /> 
+												</div>
+												
+
+												
+											</div>
+										</div>
+										
+
+
+										 <div class="portfolio-desc">										 	
+											<div class="folio-info">
+												<div class ="top-margin">
+													
+												</div>
+										 		<div class = "details">
+													
+												</div>
+
+												
+
+												<% if current_user != nil && !current_user.events.include?(event) &&current_user.student? %>
+
+												<% even  = event %>
+												
+												<%= javascript_tag do %>
+									  				function create_event_user_link(){
+													  alert('<%= even.id %>' );
+
+													  $.ajax({
+													              type: "POST",
+													              url:    "/add_event_user", // should be mapped in routes.rb
+													              data: {my_event: eve, user: user},
+													              datatype:"html", // check more option
+													              success: function(data) {
+													                       // handle response data
+													                       },
+													              async:   true
+													            });    
+													  return false;
+
+													}
+												<% end %>
+													
+													<!--this link runs the javascript, but need toget javascript to work correctly -->
+													<%= link_to 'javascript:create_event_user_link();', :class => 'fancybox' do %>
+													<%end%>
+
+
+													<%= link_to add_event_user_path(event), method: :post, :class => 'fancybox' do %>
+													    <i class="fa fa-plus fa-2x"></i>
+													<% end %>
+												<%elsif current_user != nil &&current_user.student?%>
+													<%= link_to remove_event_user_path(event), method: :post, :class => 'fancybox' do %>
+													    <i class="fa fa-minus fa-2x"></i>
+												    <% end %>
+												<%end%>
+												<!-- <a href="img/portfolio/img1.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a> -->	
+											</div>											 								   
+										 </div>
+									</div>
+                                </article>
+                                <% end %>                              
+                              </div>                                        
+							</div>
+						</div>
+					</div>	
+				</div>
+				<div class="row" id="myOrganizations">
+					<div class="heading">
+						My Organizations
+					</div>
+					<div class="organizations">
+
+						<% if @organizations.length > 0 %>
+
+							<% @organizations.each do |organization| %>
+							 	<div class="col-md-3"><%= link_to organization do%>
+							 		<div class="row organizationsImg">
+
+							 		<% if organization.photo.url != "/images/original/missing.png" %>
+							 			<%= image_tag organization.photo.url %>
+							 		<% else %>
+							 			<%= image_tag "faUsers.png" %>
+							 		<%end%>
+							 		</div>
+							 		<div class="row organizationsName"> <%=organization.name%> </div>
+							 		<%end%>
+							 	</div>
+						 	<%end%>
+
+						 <%else%>
+
+						 	<div class="col-md-12">
+							 		
+							 		<div class="row organizationsName"> <h3> Looks like you aren't in any organizations!</h3> </div>
+							 		
+							 </div>
+
+						 <% end%>
+
+					 	
+					</div>						
+				</div>
+
+			</div>
+
+			<div class="col-md-1" id="socialSection">
+				<!--<div class="row" id="socialRSS">
+					See what your friends have been up to!				
+				</div>-->
+			</div>			
+		</div>		
+	</div>
+
+	<div class="row">
+		</br>
+	</div>
+
+	<!--Start of footer class: including social media links etc-->	
+	<section id="footer" class="section footer">
+		<div class="container">
+			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+				<div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+				</div>
+			</div>
+
+			<div class="row align-center copyright">
+					<div class="col-sm-12"><p>Copyright &copy; 2015 CampusFly</p></div>
+			</div>
+		</div>
+
+	</section>
+
+
+
+
+
+

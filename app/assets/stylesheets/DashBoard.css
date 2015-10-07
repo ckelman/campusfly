@@ -1,0 +1,523 @@
+body {
+	color:#777;
+	background: #f7f7f7;
+	font-size: 16px;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: 'Cabin', sans-serif;
+}
+
+#headerRow{
+	width: 100%;
+	padding-bottom: 10px;
+	background-color: black;
+}
+
+#logoCampusFly {
+    height: 40px;
+    width: 50px;
+    padding-bottom: 3px;
+    padding-top: 0px;
+    margin-top: -15px;
+    display: inline-block;
+}
+
+#profileTag {
+    height: 40px;
+    width: 40px;
+    padding-top: 0px;
+    margin-top: -10px;
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+	padding-right: 3px;
+	margin-top: -10px;
+}
+
+.navbar .container .nav li ul li i{
+	padding-right: 3px;
+}
+
+#profileLable{
+	padding-left: 5px;
+	margin-top: -5px;
+}
+
+#mainLogo {
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.navbar{
+	max-height: 50px;
+	background-color: black;
+	color: white;
+}
+
+.navbar .container{
+	background-color: black;
+	width: 100%;
+	max-height: 50px;
+	color: white;
+}
+
+.navbar-buttons-container{
+	float: right;
+	color: white;
+}
+
+.navbar a{
+	max-width: 200px;
+	/*color: white;*/
+}
+.help{
+	width: 100px;
+	text-align: center;
+	margin-top: 4px;
+	margin-bottom: 6px;
+}
+
+#profileDD{
+	max-width: 200px;
+	margin-bottom: -10px;
+}
+
+#createEvent a{
+	background-color: #ff5454;
+}
+
+#createEvent a:hover{
+	background-color: #001f3f;
+}
+
+#viewEvent a{
+	background-color: #2ECC40;
+}
+
+#viewEvent a:hover{
+	background-color: #0074D9;
+}
+
+
+
+.navbar .nav li ul{
+  padding:0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  top:0;
+  width: inherit;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 1s;
+  -moz-transition: opacity 1s;
+  -ms-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  -transition: opacity 1s;
+}
+.navbar .nav li ul li { 
+	text-align: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+  	background: #ffffff; 
+  	display: block;
+}
+
+.navbar .nav li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: white;
+	padding-bottom: 15px;
+}
+
+/*---------------------------------------------- 
+This marks end of general and nav bar material 
+-----------------------------------------------*/
+
+
+/*---------------------------------------------- 
+Beginning of profile Section 
+-----------------------------------------------*/
+
+#mainSection{
+	padding-top: 100px;
+}
+
+/*Profile Pic section*/
+#profileSection{
+	text-align: center;
+	padding-right: 2px;
+}
+
+
+#profilePic{
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	max-width: 204px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#profilePic img{
+	max-width: 204px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#profileCaption{
+	width: inherit;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	background-color: white
+}
+
+#profileCaption p{
+	color: #565a5c;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bolder;
+	max-width: 250px;
+}
+
+#profileCaption a{
+	color: #ff5454;
+	max-width: 250px;
+	font-size: 11px;
+	padding-bottom: 5px;
+}
+
+/* Heading class will be used for heading of all sections */
+
+.heading{
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+    margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #00CD66;
+	color: white;
+	font-weight: bold;
+	padding-left: 5px;
+}
+/*End og heading class*/
+
+
+/* verification section*/
+
+#verification{
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	max-width: 204px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	text-align: left;
+	background-color: white;
+}
+
+
+#verification .fa-check-circle-o{
+	color: green;
+}
+
+#verification .fa-times-circle-o{
+	color: red;
+}
+
+#verification p{
+	margin-left: 10px;
+	padding-right: 4px;
+}
+
+
+/*End of Verification section*/
+
+
+/* Start of "inviteFriend" section */
+
+#inviteFriends{
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	background-color: white;
+	max-width: 100%;
+	text-align: left;
+	padding: 5px;
+	padding-top: 10px;
+	max-height: 200px;
+}
+
+#inviteFriends /*.col-md-2 .col-md-offset-1*/ .inviteFriend{
+	height: 100%;
+	max-height: 90px;
+	padding-top: 20px;
+}
+
+.inviteFriend .btnInvite{
+	background-color: #ff5454;
+  	border: none;
+  	color: white;
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  	padding-right:6px;
+  	padding-left: 6px
+}
+
+.inviteFriend .btnInvite:hover{
+	background-color: #00CD66;
+}
+
+
+/*My Events Section*/
+
+#myEvents{
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	background-color: white;
+	max-width: 100%;
+	text-align: left;
+	padding-bottom: 5px;
+	padding-top: 0px;
+	margin-top: 10px;
+}
+
+#myEvents .heading{
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 5px;
+	padding-right: 0px;
+}
+
+.events{
+	width: inherit;
+	max-height: 350px;
+	padding-left: 5px;
+	text-align: center;
+}
+
+.events .eventImg{
+	max-height: 130px;
+	max-width: 350px;
+}
+
+.events .eventImg img{
+	max-height: inherit;
+	max-width: inherit;
+}
+
+.events .row{
+	padding-bottom: 10px;
+}
+
+
+/*
+Start of my organizations
+*/
+
+#myOrganizations{
+	border-style: solid;
+	border-width: 1px;
+	border-color: grey;
+	background-color: white;
+	max-width: 100%;
+	text-align: left;
+	padding-bottom: 5px;
+	padding-top: 0px;
+	margin-top: 10px;
+}
+
+#myOrganizations .heading{
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 5px;
+	padding-right: 0px;
+}
+
+.organizations{
+	width: inherit;
+	max-height: 350px;
+	padding-left: 5px;
+	text-align: center;
+}
+
+
+.organizations .organizationsImg{
+	max-height: 130px;
+	/*max-width: 130px;*/
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.organizations .organizationsImg img{
+	max-height: inherit;
+	max-width: inherit;
+	border-style: solid;
+	border-color: #001f3f;
+	border-width: 3px;
+	border-radius: 60px;
+	-webkit-border-radius: 60px;
+	-moz-border-radius: 60px;
+}
+
+.organizations .row{
+	padding-bottom: 10px;
+}
+
+.organizations a{
+	text-decoration: none;
+}
+
+
+
+/*=========================
+  Footer
+ ================= */
+
+section#footer {
+	background: #242424;
+	margin: 0;
+	text-align: center;
+	margin-top: 20px;
+}
+
+section#footer .copyright {
+	text-align: center;
+}
+
+/* footer social icons */
+ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
+
+/* footer menu */
+ul.footer-menu {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+}
+ul.footer-menu li {
+	display: inline;
+	margin: 0 5px;
+}
+
+a.scrollup{
+	height:32px;
+	width:32px;
+	color:#fff;
+	font-size:18px;
+	line-height:32px;
+	text-align:center;
+	text-decoration:none;
+	position:fixed;
+	bottom:10px;
+	right:10px;
+	z-index:9999;
+	opacity:0.5;
+}
+a.scrollup:hover{
+	opacity:1;
+	color:#fff;
+}
+
+/* footer social icons */
+.social-network a.icoRss:hover {
+	background-color: #F56505;
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoTwitter:hover {
+	background-color:#33ccff;
+}
+.social-network a.icoGoogle:hover {
+	background-color:#BD3518;
+}
+.social-network a.icoVimeo:hover {
+	background-color:#0590B8;
+}
+.social-network a.icoLinkedin:hover {
+	background-color:#007bb7;
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, 
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+
+

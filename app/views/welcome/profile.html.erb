@@ -1,0 +1,471 @@
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<!-- BASICS -->
+        <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>CampusFly</title>
+        <meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />	
+		<link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+		<!-- skin -->
+		<link rel="stylesheet" href="skin/default.css">
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+    </head>
+	 
+    <body>
+		<section id="header" class="appear"></section>
+		<div class="navbar navbar-fixed-top" role="navigation" data-0="line-height:100px; height:100px; background-color:rgba(0,0,0,0.3);" data-300="line-height:60px; height:60px; background-color:rgba(0,0,0,1);">
+			 <div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="fa fa-bars color-white"></span>
+					</button>
+					<h1><a class="navbar-brand" href="/" data-0="line-height:90px;" data-300="line-height:50px;">
+					<%= image_tag "campusflyBWtransparent.png", :id => "mainLogo" %> CampusFly
+					</a></h1>
+				</div>
+				<div class="navbar-collapse collapse">
+					<ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
+						<li><a href="https://www.campusfly.us/blog.html">Blog</a></li>
+						<% if !user_signed_in? %>
+						<li><%= link_to(' Facebook Sign-In', user_omniauth_authorize_path(:facebook))  %></li>
+						<li><%= link_to(' Organizer Sign up', new_organizer_registration_path)  %></li>
+						<% else %>
+						  <li>
+						  <%= link_to(current_user.email, welcome_profile_path(0)) %>  
+						  </li>
+						<% end %>
+						<% if user_signed_in? %>
+						  <li>
+						  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+						  </li>
+						<%end%>
+						<li class = "help"><a href="#"><i class="fa fa-info"></i><i class="fa fa-caret-down"></i></a>
+								<ul>
+									<li><a href="#services">About</a></li>
+									<li><a href="#section-contact">Contact</a></li>									
+								</ul>
+						</li>
+						<li><a href="#section-works">View Events</a></li>
+						
+						
+						
+					</ul>
+				</div><!--/.navbar-collapse -->
+			</div>
+		</div>
+
+		<!-- Start of SignUp-->	
+						<div id="modal" class="signPopupContainer" style="display:none;">
+							<header class="signPopupHeader">
+								<span class="header_title">Login</span>
+								<span class="signModal_close"><i class="fa fa-times"></i></span>
+							</header>
+						
+							<section class="signPopupBody">
+								
+<!-- Social Login -->
+								<div class="signSocial_login">
+									<div class="">
+										<a href="#" class="signSocial_box fb">
+											<span class="signIcon"><i class="fa fa-facebook"></i></span>
+											<span class="signIcon_title">Connect with Facebook</span>
+										</a>
+
+										<a href="#" class="signSocial_box google">
+											<span class="signIcon"><i class="fa fa-google-plus"></i></span>
+											<span class="signIcon_title">Connect with Google</span>
+										</a>
+									</div>
+
+									<div class="signCenteredText">
+										<span>Or use your Email address</span>
+									</div>
+
+									<div class="signAction_btns">
+										<div class="signOne_half">
+											<a href="#" id="signLogin_form" class="signBtn">Login</a>
+										</div>
+
+										<div class="signOne_half last">
+											<a href="#" id="signRegister_form" class="signBtn">Sign up</a>
+										</div>
+									</div>
+								</div>
+							
+<!-- Username & Password Login form -->
+	
+								<div class="signUser_login">	
+									<form>
+										<label>Email / Username</label>
+										<input type="text" />
+										<br />
+
+										<label>Password</label>
+										<input type="password" />
+										<br />
+
+										<div class="signCheckbox">
+											<input id="remember" type="checkbox" />
+											<label for="remember">Remember me on this computer</label>
+										</div>
+
+										<div class="signAction_btns">
+											<div class="signOne_half">
+												<a href="#" class="signBtn signBack_btn">
+													<i class="fa fa-angle-double-left"></i> 
+													Back
+												</a>
+											</div>
+
+											<div class="signOne_half last">
+												<a href="#" class="signBtn signBtn_red">Login</a>
+											</div>
+										</div>
+									</form>
+							
+									<a href="#" class="signForgot_password">Forgot password?</a>
+								</div>
+
+<!-- Register Form -->
+								<div class="signUser_register">
+									<form>
+										<label>Full Name</label>
+										<input type="text" />
+										<br />
+
+										<label>Email Address</label>
+										<input type="email" />
+										<br />
+
+										<label>Password</label>
+										<input type="password" />
+										<br />
+
+										<div class="signCheckbox">
+											<input id="send_updates" type="checkbox" />
+											<label for="send_updates">Send me occasional email updates</label>
+										</div>
+
+										<div class="signAction_btns">
+											<div class="signOne_half">
+												<a href="#" class="signBtn signBack_btn">
+													<i class="fa fa-angle-double-left"></i>
+													Back
+												</a>
+											</div>
+
+											<div class="signOne_half last">
+												<a href="#" class="signBtn btn_red">Register</a>
+											</div>
+										</div>
+									</form>
+								</div>
+							</section>
+						</div>
+				</div>
+
+		<!-- Endo of sign in stuff-->
+
+		
+				
+		<!-- section works -->
+		<section id="section-works" class="section appear clearfix">
+			<div class="container">
+				
+				<div class="row mar-bot40">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+							<h2 class="section-heading animated" data-animation="bounceInUp">Events</h2>
+							<p>Not sure what you are looking for? Just browse all the events in your commmunity or fine-tune based on your preferences.</p>
+						</div>
+					</div>
+				</div>
+					
+                        <div class="row">
+                          <nav id="filter" class="col-md-12 text-center">
+                            <ul>
+                              <li><a href="#" class="current btn-theme btn-small" data-filter="*">All</a></li>
+                              <li><a href="#"  class="btn-theme btn-small" data-filter=".newest" >Newest</a></li>
+                              <li><a href="#"  class="btn-theme btn-small" data-filter=".nearest">Nearest</a></li>
+                              <li ><a href="#" class="btn-theme btn-small" data-filter=".price">$ to $$$</a></li>
+                            </ul>
+                          </nav>
+                          <div class="col-md-12">
+
+
+                            <div class="row">
+                              <div class="portfolio-items isotopeWrapper clearfix" id="3">
+
+                              <!-- Start of events HERE IS WHERE RUBY CODE GO -->
+							  <% @events.each do |event| %>
+                                <article class="col-md-4 isotopeItem newest nearest" id='this_thing'>
+									<div class="portfolio-item">
+									<%= image_tag event.photo.url(:medium) %>
+										 <div class="portfolio-desc">										 	
+											<div class="folio-info">
+												<div class ="top-margin">
+													<h6 class ="top-margin-left"></h6> <h6 class ="top-margin-right"><%= event.date.strftime("%b %d, %Y | %l:%M %p") %></h6>
+												</div>
+										 		<div class = "details">
+													<h5><a href="#"><%= event.title %></a></h5>
+													<p></p>
+													<p><%= event.location %></p>
+													<p><%= event.description %></p>
+												</div>
+
+												
+
+												<% if current_user != nil && !current_user.events.include?(event) %>
+
+												<% even  = event %>
+												
+												<%= javascript_tag do %>
+									  				function create_event_user_link(){
+													  alert('<%= even.id %>' );
+
+													  $.ajax({
+													              type: "POST",
+													              url:    "/add_event_user", // should be mapped in routes.rb
+													              data: {my_event: eve, user: user},
+													              datatype:"html", // check more option
+													              success: function(data) {
+													                       // handle response data
+													                       },
+													              async:   true
+													            });    
+													  return false;
+
+													}
+												<% end %>
+													
+													<!--this link runs the javascript, but need toget javascript to work correctly -->
+													<%= link_to 'javascript:create_event_user_link();', :class => 'fancybox' do %>
+													<%end%>
+
+
+													<%= link_to add_event_user_path(event), method: :post, :class => 'fancybox' do %>
+													    <i class="fa fa-plus fa-2x"></i>
+													<% end %>
+												<%elsif current_user != nil%>
+													<%= link_to remove_event_user_path(event), method: :post, :class => 'fancybox' do %>
+													    <i class="fa fa-minus fa-2x"></i>
+												    <% end %>
+												<%end%>
+												<!-- <a href="img/portfolio/img1.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a> -->
+												<div class = "social">
+											 		<i class="fa fa-facebook-square fa-1x"></i>
+											 	</div>	
+											</div>											 								   
+										 </div>
+									</div>
+                                </article>
+                                <% end %>
+<!-- 
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img2.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 2</a></h5>
+												<a href="img/portfolio/img2.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+								
+
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img3.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 3</a></h5>
+												<a href="img/portfolio/img3.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem price">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img4.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 4</a></h5>
+												<a href="img/portfolio/img4.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img5.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 5</a></h5>
+												<a href="img/portfolio/img5.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem newest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img6.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 6</a></h5>
+												<a href="img/portfolio/img6.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem price">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img7.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 7</a></h5>
+												<a href="img/portfolio/img7.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem nearest">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img8.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 8</a></h5>
+												<a href="img/portfolio/img8.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article>
+
+                                <article class="col-md-4 isotopeItem price">
+									<div class="portfolio-item">
+										<img src="img/portfolio/img9.jpg" alt="" />
+										 <div class="portfolio-desc align-center">
+											<div class="folio-info">
+												<h5><a href="#">Event 9</a></h5>
+												<a href="img/portfolio/img9.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a>
+											 </div>										   
+										 </div>
+									</div>
+                                </article> -->
+                                </div>
+                                        
+							</div>
+                                     
+
+							</div>
+                        </div>
+				
+			</div>
+		</section>
+
+
+	
+
+		<!-- /about -->
+		
+	
+		<!-- map -->
+		<section id="section-map" class="clearfix">
+			<div id="map"></div>
+		</section>
+		
+	<section id="footer" class="section footer">
+		<div class="container">
+			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+				<div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+				</div>
+			</div>
+
+			<div class="row align-center copyright">
+					<div class="col-sm-12"><p>Copyright &copy; 2015 CampusFly</p></div>
+			</div>
+		</div>
+
+	</section>
+	<a href="#header" class="scrollup"><i class="fa fa-chevron-up"></i></a>	
+
+	<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASm3CwaK9qtcZEWYa-iQwHaGi3gcosAJc&sensor=false"></script>
+	<script src="js/jquery.isotope.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="js/skrollr.min.js"></script>		
+	<script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+	<script src="js/jquery.localscroll-1.2.7-min.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/jquery.appear.js"></script>
+	<script src="js/validate.js"></script>
+    <script src="js/main.js"></script>
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 11,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [	{		featureType:"all",		elementType:"all",		stylers:[		{			invert_lightness:true		},		{			saturation:10		},		{			lightness:30		},		{			gamma:0.5		},		{			hue:"#1C705B"		}		]	}	]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using out element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+            }
+        </script>
+
+        <!-- Google analytics-->
+
+		 <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-58920131-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>

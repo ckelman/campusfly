@@ -1,0 +1,82 @@
+<head>
+	
+</head>
+
+<html>
+	<body>
+
+	<!-- Start of nav bar: inherited from home page index.html, but should be inherited from dashboard-->
+
+	
+
+<div id="EventCreationPageContainer">
+	<div class="head" >
+		<h1>List Your Event</h1>
+		<h3> CampusFly makes listing your events a breeze!</h3>
+		<p>Bear with us, we are still working towards optimizing your experience!</p>
+		<p><i class="fa fa-wrench fa-4x"></i></p>
+	</div>
+
+	<div id="formsContainer">
+
+		<%= render 'form' %>
+
+		<div id='goBack'><%= link_to root_path  do%> <i class="fa fa-hand-o-left"></i> Back <%end%></div>
+
+	</div>
+</div>
+
+<div id="futurePromises">
+	<h2>
+		We are doing our best to deliver community events to your palms!
+	</h2>
+	<dv class="row">
+		<div class="col-md-4">
+			<p class="lead">Break through to the entire community</p>
+			<p class="icon"><i class="fa fa-globe fa-4x"></i></p>
+			<p>With your support we are hoping to expand to multiple campuses in your area. This means more students, more events, more awareness and better attendance!</p>
+		</div>
+		<div class="col-md-4">
+			<p class="lead">Reach everyone on all devices</p>
+			<p class="icon"><i class="fa fa-tablet fa-4x"></i></p>
+			<p>We are working to transfer CampusFLy to all devices from apple products to windows phones, droids, laptops and tablets.</p>
+		</div>
+		<div class="col-md-4">
+			<p class="lead">Ticket Purchases</p>
+			<p class="icon"><i class="fa fa-ticket fa-4x"></i></p>
+			<p>We are also working on the legal, technical and logistical aspect of online ticket purchasing. No more going to 90s style, obscure websites to get you tickets. Yow will even be able to keep your tickets on your phones and electronically scan them for ease of access to whichever event you want to attend! Your job will just be to host the event and we will do the rest!</p>
+		</div>
+	</dv>
+		
+
+
+</div>
+
+
+<!--Start of footer class: including social media links etc-->	
+	<section id="footer" class="section footer">
+		<div class="container">
+			<div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+				<div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>				
+				</div>
+			</div>
+
+			<div class="row align-center copyright">
+					<div class="col-sm-12"><p>Copyright &copy; 2015 CampusFly</p></div>
+			</div>
+		</div>
+
+	</section>
+
+
+
+	</body>
+
+	</html>

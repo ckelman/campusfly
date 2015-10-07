@@ -1,0 +1,93 @@
+#signupSection{
+	padding: 20px;
+	text-align: center;
+	width: 100%;
+}
+
+#signupSection .container{
+	width: 100%;
+}
+
+#signupSection .container .row{
+
+}
+
+#signupSection .header{
+
+}
+
+#signupSection .student{
+	background-color: #ff5454;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#signupSection .eventCreator{
+	background-color: #2ECC40;
+	padding-top: 20px;
+	padding-bottom: 5px;
+}
+
+#signupSection h3{
+	font-weight: bolder;
+	color: white;
+}
+
+#signupSection .fa-stack{
+	padding-top: 0px;
+	margin-top: -10px;
+}
+
+#signupSection .circle{
+	color: white;
+}
+
+#signupSection .student .icon{
+	color: #2ECC40;
+}
+
+#signupSection .eventCreator .icon{
+	color: #ff5454;
+}
+
+#signupSection .formSection{
+	background-color: white;
+	margin: 10px;
+	text-align: center;
+}
+
+#signupSection .formSection .row{
+	width: 100%;
+	margin-top: 10px;
+}
+
+#signupSection .formSection .row button{
+	color: white;
+	background-color: #3b5998;
+	width: 100%;
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+#signupSection .formSection p{
+	color: black;
+	opacity: 1;
+	font-weight: bold;
+}
+
+#signupSection .formSection .theOr{
+	padding-top: 10px;
+	padding-bottom: 15px;
+}
+
+#signupSection .formSection .checkbox{
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+
+
+
+
+
+

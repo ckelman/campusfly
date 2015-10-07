@@ -1,0 +1,73 @@
+<article class="col-md-4 isotopeItem newest nearest" id='this_thing'>
+									<div class="portfolio-item">
+									<%= image_tag @event.photo.url(:medium) %>
+										 <div class="portfolio-desc">										 	
+											<div class="folio-info">
+												<div class ="top-margin">
+													<h6 class ="top-margin-left"></h6> <h6 class ="top-margin-right"><%= @event.date.strftime("%b %d, %Y | %l:%M %p") %></h6>
+												</div>
+										 		<div class = "details">
+													<h5><a href="#"><%= @event.title %></a></h5>
+													<p></p>
+													<p><%= @event.location %></p>
+													<p><%= @event.description %></p>
+													<p><%= @event.price %></p>
+													<p><%= @event.tickets %></p>
+													<p><%= @event.transportation_details %></p>
+													<p><%= @event.organization.name %></p>
+													<p><%= @event.off_campus %></p>
+
+													<p>
+														<% @event.categories.each do |category| %>
+															<%= category %>
+														<%end%>
+													</p>
+
+												</div>
+
+												
+
+												<% if current_user != nil && !current_user.events.include?(@event) &&current_user.student? %>
+
+												<% even  = @event %>
+												
+												<%= javascript_tag do %>
+									  				function create_event_user_link(){
+													  alert('<%= even.id %>' );
+
+													  $.ajax({
+													              type: "POST",
+													              url:    "/add_event_user", // should be mapped in routes.rb
+													              data: {my_event: eve, user: user},
+													              datatype:"html", // check more option
+													              success: function(data) {
+													                       // handle response data
+													                       },
+													              async:   true
+													            });    
+													  return false;
+
+													}
+												<% end %>
+													
+													<!--this link runs the javascript, but need toget javascript to work correctly -->
+													<%= link_to 'javascript:create_event_user_link();', :class => 'fancybox' do %>
+													<%end%>
+
+
+													<%= link_to add_event_user_path(@event), method: :post, :class => 'fancybox' do %>
+													    <i class="fa fa-plus fa-2x"></i>
+													<% end %>
+												<%elsif current_user != nil &&current_user.student?%>
+													<%= link_to remove_event_user_path(@event), method: :post, :class => 'fancybox' do %>
+													    <i class="fa fa-minus fa-2x"></i>
+												    <% end %>
+												<%end%>
+												<!-- <a href="img/portfolio/img1.jpg" class="fancybox"><i class="fa fa-plus fa-2x"></i></a> -->
+												<div class = "social">
+											 		<i class="fa fa-facebook-square fa-1x"></i>
+											 	</div>	
+											</div>											 								   
+										 </div>
+									</div>
+                                </article>

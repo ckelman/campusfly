@@ -1,0 +1,105 @@
+#EventCreationPageContainer{
+	font-family: 'Cabin', sans-serif;
+}
+
+#EventCreationPageContainer .head{
+	min-height: 20px;
+  	padding: 19px;
+  	margin-bottom: 20px;
+  	border: 1px solid #e3e3e3;
+  	border-radius: 4px;
+  	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	background-color: white;
+	text-align: center;
+}
+
+#EventCreationPageContainer #formsContainer{
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+
+#EventCreationPageContainer #formsContainer .entryContainer{
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+
+#EventCreationPageContainer #formsContainer .entryContainer .entryTitle{
+	text-align: right;
+}
+
+#EventCreationPageContainer #formsContainer .entryContainer .entryEntryField{
+	/*text-align: right;*/
+}
+
+#EventCreationPageContainer label.select{
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+
+}
+
+#EventCreationPageContainer .row.multiple{
+	margin-left: 5%;
+}
+
+#EventCreationPageContainer .actions{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+#EventCreationPageContainer .actions .eventCreateSubmit{
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	background-color: #ff5454;
+	color: white;
+	border-style: none;
+}
+
+#EventCreationPageContainer .actions .eventCreateSubmit:hover{
+	background-color: #2ECC40;
+	color: white;
+}
+
+#EventCreationPageContainer #goBack{
+	text-align: center;
+
+}
+
+#futurePromises{
+	padding: 50px;
+	background-color: white;
+}
+
+#futurePromises h2{
+	text-align: center;
+}
+
+#futurePromises .icon{
+	text-align: center;
+	color: #2ECC40;
+}
+
+#futurePromises .lead{
+	text-align: center;
+}
+
+#futurePromises .col-md-4{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.descriptionFieldsCreateEvent{
+	width: 100%;
+	height: 100px;
+}
+
+.descriptionFieldsCreateEventTitle{
+	width: 100%;
+}

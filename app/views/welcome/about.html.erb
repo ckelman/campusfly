@@ -1,0 +1,498 @@
+
+
+<body class="blogCSSseparator">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html"><i class="fa fa-arrow-circle-o-left fa-2x"></i></a>
+                    </li>
+                    <!--<li>
+                        <a href="about.html">About</a>
+                    </li>-->
+                    <li>
+                        <a href="blog.html">Our Blog</a>
+                    </li>
+                    <!--
+                    <li>
+                        <a href="#">More Posts</a>
+                    </li>-->
+                    <!--
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>-->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" id='blog_background'>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+<!--                         <img class="mainLogo" src="img/campusflyBWtransparent1.png">
+ -->                        <h1>CampusFly</h1>
+                        <hr class="small">
+                        <span class="subheading">Arriving Spring 2015</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--  --------------------------------------------------------------------------- Start of User Pop Up Mod   -->    
+        <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+        <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+            <ul class="cd-switcher">
+                <li><a href="#0">Sign In</a></li>
+                <li><a href="#0">Sign Up</a></li>
+            </ul>
+
+            <!-- login start-->
+
+            <div id="cd-login"> <!-- log in form -->
+                <%= render :template => "devise/sessions/new"%>
+                
+                <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-login -->
+
+            <!-- end of login -->
+
+
+            <!-- start of signup -->
+
+            <div id="cd-signup"> <!-- sign up form -->
+
+
+                <%= render :template => "devise/registrations/new"%>
+
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-signup -->
+
+
+            <!-- end of signup -->
+
+            <div id="cd-reset-password"> <!-- reset password form -->
+                <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Reset password">
+                    </p>
+                </form>
+
+                <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+            </div> <!-- cd-reset-password -->
+
+            <div id="cd-verify-email"> <!-- email verification -->
+                <p class="cd-form-message">We have sent you an email verification code. Please verify your email b entering the code below.</p>
+
+                <form class="cd-form">
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="reset-email">Code</label>
+                        <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">Tell me about CampusFly news!</label>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Submit">
+                    </p>
+                </form>
+                <!--<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>-->
+            </div> <!-- email verification -->
+
+            <a href="#0" class="cd-close-form">Close</a>
+        </div> <!-- cd-user-modal-container -->
+    </div> <!-- cd-user-modal -->
+
+
+
+
+<!--  --------------------------------------------------------------------------- End of User Pop Up Mod  -->
+
+
+<!--  ---------------------------------------------------------------------------  Start of Event Creation Mod -->  
+
+        <div class="cd-event-modal"> <!--class="cd-user-modal"--> <!-- this is the entire modal form, including the background -->
+        <div class="cd-event-modal-container"> <!--class="cd-user-modal-container"--> <!-- this is the container wrapper -->
+            <ul class="cd-switcher"> <!--class="cd-switcher"-->
+                <li><a href="#0">Student</a></li>
+                <li><a href="#0">Business</a></li>
+            </ul>
+
+            <!-- login start-->
+
+            <div id="cd-student"> <!--id="cd-login"--> <!-- log in form -->
+                <form class="cd-form"> 
+                    <p class="cd-form-message">Who are you?</p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signin-email">E-mail .edu</label>
+                        <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail .edu">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <a href = "#" id= "loginButtons" class = "btn btn-dark btn-lg">Sign Up First</a>
+
+                    <a href = "#" id= "verify"> Verify Green </a>
+                    <a href = "#" id= "verify"> Enter Code </a> <a href = "#" id= "verify"> Check</a>
+
+                    <!-- or separator -->
+                    
+                    <div class="or-spacer">
+                        <div class="mask"></div>
+                        <span><i>or</i></span>
+                    </div>
+
+                    <div class="or-spacer-vertical left">
+                        <div class="mask"></div>
+                    </div>
+
+                    <div class="or-spacer-vertical right">
+                        <div class="mask"></div>
+                    </div>
+                    
+                    <!-- end of or separator -->
+                    <!-- If verify button is green, slide down -->
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">School </label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="School">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">Organization </label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Organization">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">Contact </label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Contact">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">Title/Position </label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Title/Position">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+                    <!--
+                        This is where we would add "Add members section"
+                        This is where we would add additional tag information.
+                        Reference the layout in Rikesh's Blue Book. 
+
+                    -->
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">I agree to the <a href="termsOfService.html" target="_blank">Terms and Services</a></label>
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width" type="submit" value="Complete!">
+                    </p>
+                </form>
+
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-login -->
+
+            <!-- end of Student -->
+
+            <!-- start of Outside Business -->
+
+            <div id="cd-business"> <!-- sign up form -->
+                <form class="cd-form">
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-username">Name of Business</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Name of Business">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signup-email">E-mail</label> 
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail"> <!-- used to be "E-mail"-->
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-email" for="signup-email"> Verification-code </label> 
+                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="Enter Code Here"> <!-- used to be "E-mail"-->
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">Password</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password"> <!-- used to be "Password"-->
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signup-password">Confirm Password</label>
+                        <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Confirm Password"> <!-- used to be "Password"-->
+                        <a href="#0" class="hide-password">Hide</a>
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-username">First Name, Last Name</label>
+                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="First Name, Last Name"><!-- used to be "username"-->
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-password" for="signin-password">Title/Position </label>
+                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Title/Position">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <input type="checkbox" id="accept-terms">
+                        <label for="accept-terms">I agree to the <a href="termsOfService.html" target="_blank">Terms and Services</a></label>
+                    </p>
+
+                    <p class= "emailSignUpHeader">
+                        Note: you will have to enter your .edu email and verify in the next section to complete your account creation.
+                    </p>
+
+                    <p class="fieldset">
+                        <input class="full-width" type="submit" value="Complete!">
+                    </p>
+                </form>
+
+                <!-- <a href="#0" class="cd-close-form">Close</a> -->
+            </div> <!-- cd-signup -->
+
+            <!-- end of signup -->
+
+            <!-- Start of Create Event Link
+             launches on conpletion of the Buiness/ Student Organization signup form
+            -->
+
+            <div id="cd-event-creation-transition"> <!-- reset password form -->
+                <p class="cd-form-message">Congradulations!</p>
+                <p class="cd-form-message">Now that you are registered:</p>
+                
+                <form class="cd-form">                  
+                    <p class="fieldset">
+                        <input class="full-width has-padding" type="submit" value="Create Event">
+                    </p>
+
+                    <p class="cd-form-message">I'll do it later:</p>
+                    <p class="cd-form-bottom-message"><a href="#0">View organization dashboard</a></p>
+                
+                </form>
+
+                
+            </div> <!-- cd-reset-password -->
+
+            <!-- End of Create event snippet -->
+
+            <a href="#0" class="cd-close-form">Close</a>
+        </div> <!-- cd-user-modal-container -->
+    </div> <!-- cd-user-modal -->
+
+
+<!--  -------------------------- End of Creation Mod------------------------------------------------- -->
+
+<!-- Start of Facebok email entry mod-->
+<% if params["from_facebook"] == 'true' %>
+
+    <div class="cd-facebookEmail-modal"> <!-- this is the entire modal form, including the background -->
+        <div class="cd-facebookEmail-modal-container"> <!-- this is the container wrapper -->
+            <div id="cd-facebook-Email"> <!-- email verification -->
+
+                    
+                        <p class="cd-form-message">Please enter your email (@u.rochester.edu required for students)</p>
+
+                    <% if params['signup_error'] %>
+                        <ul>
+                            <% params['signup_errors'].each do |error| %>
+                                <li class="cd-form-message"><%= error %></li>
+                            <% end %>
+                        </ul>
+                    <%end%>
+
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "new_user cd-form"}) do |f| %>
+
+                        <%= hidden_field_tag :from_facebook, :true %>
+
+                        <p class="fieldset">
+                            Are you a student?   
+                            <%= f.radio_button :student, true, :checked => true %> 
+                            <%= label :student_true, 'Yes' %>
+                            <%= f.radio_button :student, false %>
+                            <%= label :student_false, 'No' %>
+                        </p>
+
+
+
+
+
+                        <p class="fieldset">
+                            <label class="image-replace cd-email" for="user_email"></label> 
+                            <input class="full-width has-padding has-border" id="user_email" name="user[email]" type="email" placeholder="u.rochester.edu E-mail"> <!-- used to be "E-mail"-->
+                            <!-- <span class="cd-error-message">Error message here!</span> -->
+                        </p>
+
+                        <p class="fieldset">
+                            
+                            <div><%= f.submit "Create account", :class => "full-width has-padding" %></div>
+                        </p>
+
+                    <%end%>
+                    <!--<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>-->
+            </div> <!-- email verification -->
+        </div>
+    </div>
+<%end%>
+
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="#">
+                        <h2 class="post-title">
+                            Promotions, and How to be Good at Them
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Our tips on how to become a better promoter and salesman.
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="index.html">CampusFly</a> February 20th 2015</p>
+
+                    <p> Today, everywhere you turn somebody is trying to promote or sell something to you. Whether it’s your friend who is working on their 12th draft of their resume as they try to sell themselves to recruiters for jobs and internships, or it could the cheesy TV commercials for that dealership you drive by every day. People always have different motives for wanting to convince you to do something, and they can be as small as a personal favor to as much as taking your life savings, and some people are really good at making you do exactly what they’re seeking. These people are the geniuses behind incredible marketing campaigns. There’s a lot we can learn from these masters of marketing, which we can apply to our own goals and ventures. </p> 
+
+                    <p> In order to be successful at promoting your objectives, whatever they may be, you have to be creative and confident. Being creative in sales and promotions is key. You have to stand out and you have to make people remember you. A great story that comes to mind is from an Episode of Shark Tank. Dave Mayer, a young entrepreneur and founder of Clean Bottle, faced the challenge that many entrepreneurs face: advertising his product. With little money and resources, Dave thought outside the box on how to get attention to his innovative bottle design. So he made a mascot sized costume of his bottle, put it on, and went to the Tour de France. With international media coverage, he started running alongside the bikers, fully-dressed in his bottle suit. He reached thousands, if not millions, of people and the best part is he did it all for free. This is just one example of thousands out there, where creative people think of new ways to raise publicity for their products or causes.  </p>
+
+                    <p> Confidence is important in sales because you have to truly believe and embody whatever it may be that you are trying to get people to do.  If you are working in fundraising or philanthropy, you must have a meaningful and resolute reason as to why your audience should support your cause, and why specifically you are the person to best represent the cause. Confidence is especially important in the business world. As an early stage start-up, we are constantly pitching our business and ourselves. The confidence that we convey comes naturally from our passion for what we are doing. I am a big believer that confidence is built through experience and practice. If you want to be more confident, you have got to learn from your mistakes and practice your sales pitch, over and over again.</p>
+
+                    <p>The reason we preach about successful promotions is because we are building a platform that helps event promoters and organizers accomplish their objectives. We are adding a tool that can bridge the gap between event promotions and millions of college students that had been previously difficult to target. We want to give event organizers the power to reach as many college students as possible, and we want to give students the opportunity to see all the events possible to them. Because this kind of platform does not exist yet, we urge all event organizer to become better event promoters and seek out new tools like CampusFly and make us an aide in perfecting your sales pitch.</p>
+                </div>
+                <hr>
+
+                <div class="post-preview">
+                    <a href="#">
+                        <h2 class="post-title">
+                            Why We Created CampusFly
+                        </h2>
+                        <h3 class="post-subtitle">
+                            Our Story
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="index.html">CampusFly</a> February 1st 2015</p>
+
+                    <p> First, I would like to begin by saying that there was not a single moment where the light bulb went off and instantly CampusFly was born. Rather, it was a series of realizations and frustrations that ultimately led to what we have created. I noticed that on our campus, outside event planners or promoters were relying primarily on Facebook to reach out to college students. The process that they usually followed was first befriend a current student in the school that they were trying to infiltrate, and use that student as an “ambassador” to invite their peers to the events using Facebook. These ambassadors usually got paid or kept a percentage of what they sold, making it worth for them to actually do this kind of job. </p> 
+
+                    <p> I also saw student organizations who put together incredible events on campus, but did not have an online venue to sell tickets. On my campus, you had to purchase your tickets for events in a brick and mortar location in the center of campus; not the worst thing ever, but it’s certainly an inconvenience and relatively archaic for people my age. We have all been used to buying tickets online, but for some reason our college had not caught up with new technologies. The thing that really pushed me to pursue CampusFly was when I attended Start-Up Weekend Rochester in 2014. I was one of maybe 6 college students there out of a crowd of over a 100 people. A lot of the people there were in their late 20s and early 30s, many even older. For those who might not know, Start-Up weekend is an event where people interested in starting a business come together over the course of one long, sleepless weekend to try and create their business and pitch it. The event usually attracts young and talented engineers, and in a place like Rochester with top notch engineering schools at University of Rochester and Rochester Institute of Technology, one would expect a ton of aspiring entrepreneurs or talented programmers to be at this type of event, but, sadly, that was not the case. </p>
+
+                    <p> So, I came back to campus and discovered that other students just were not aware that this event was going on, and a lot of them were upset that they had missed it. But, of course, we all know that feeling way too well. The feeling when you find out that there was a cool event that you missed because you just didn’t know about it, or the frustration you feel when you want to make plans to do something fun this weekend but you have to search 5 different websites to find out what’s going on, and on top of that you have to do a google map search to find out how far from campus those events are. We understand those feelings, we’re students too. So, we have been working tirelessly for almost a whole year to create something that made college a little easier. Something that student organization and event planners could use to share their event with their entire campus; something that students could use to easily find what’s going on around them and what their peers are doing without wasting hours of valuable time. We came up with CampusFly. We can’t wait to launch and share our product with you. Stay tuned, and follow us on our social media for news, updates, and cool giveaways! </p>
+                </div>
+                <hr>
+                <!--
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">
+                            Post 2
+                        </h2>
+                        <h3 class="post-subtitle">
+                            subtitle
+                        </h3>
+                    </a>
+                    <p class="post-meta">Posted by <a href="index.html">CampusFly</a> Date</p>
+                </div>
+                <hr>-->
+
+
+                <!-- Pager
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+        <section id="footer" class="section footer">
+        
+        <div class="container">
+            <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+                <div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="https://www.facebook.com/campusfly.us/" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/CAMPUSFLYUS" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="http://instagram.com/CAMPUSFLY" class="icoInstagram" title="Twitter"><i class="fa fa-instagram"></i></a></li>
+                    </ul>               
+                </div>
+            </div>
+
+            <div class="row align-center copyright">
+                    <div class="col-sm-12"><p>Copyright &copy; 2015 CampusFly</p></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jqueryblog.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+    <!-- Google analytics-->
+
+         <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-58920131-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+</body>
